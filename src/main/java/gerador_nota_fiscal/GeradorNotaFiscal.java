@@ -21,6 +21,7 @@ public class GeradorNotaFiscal {
     }
 
     public void enviarSAP(NotaFiscal notaFiscal) {
+        this.sap.envia(notaFiscal);
     }
 
     public void persistirNotaFiscal(NotaFiscal notaFiscal) {

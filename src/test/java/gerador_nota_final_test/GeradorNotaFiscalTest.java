@@ -62,9 +62,7 @@ class GeradorNotaFiscalTest {
         Fatura fatura = new Fatura("Cliente Teste", "Rua Teste, 123", 1000.0, TipoServico.CONSULTORIA);
         NotaFiscal notaFiscal = geradorNotaFiscal.gerarNotaFiscal(fatura);
 
-        SAP sap = new SAP();
         geradorNotaFiscal.enviarSAP(notaFiscal);
-
         assertEquals(notaFiscal, sap.getUltimaNotaFiscalEnviada());
     }
 
