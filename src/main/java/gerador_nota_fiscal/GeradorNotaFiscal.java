@@ -25,5 +25,6 @@ public class GeradorNotaFiscal {
     }
 
     public void persistirNotaFiscal(NotaFiscal notaFiscal) {
+        this.notaFiscalDao.salva(notaFiscal);
     }
 }
