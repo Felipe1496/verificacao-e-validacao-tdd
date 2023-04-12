@@ -19,6 +19,12 @@ public class CalculadoraDeSalario {
                 }
 
                 return funcionario.getSalarioBase() * 0.85;
+            case "GERENTE":
+                if (funcionario.getSalarioBase() >= 5000) {
+                    return funcionario.getSalarioBase() * 0.7;
+                }
+
+                return funcionario.getSalarioBase() * 0.8;
             default:
                 return funcionario.getSalarioBase();
         }
