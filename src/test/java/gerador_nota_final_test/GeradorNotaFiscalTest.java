@@ -1,6 +1,9 @@
 package gerador_nota_final_test;
 
 import gerador_nota_fiscal.GeradorNotaFiscal;
+import gerador_nota_fiscal.NotaFiscalDao;
+import gerador_nota_fiscal.SAP;
+import gerador_nota_fiscal.Smtp;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
