@@ -54,7 +54,7 @@ class GeradorNotaFiscalTest {
         NotaFiscal notaFiscal = geradorNotaFiscal.gerarNotaFiscal(fatura);
         geradorNotaFiscal.enviarPorEmail(notaFiscal);
         // Verifica se o método de envio por e-mail foi chamado com a nota fiscal correta
-        assertEquals(notaFiscal, smtp.getUltimaNotaFiscalEnviada());
+        assertEquals(notaFiscal, smtp.getUltimoAdicionado());
     }
 
     @Test
@@ -63,7 +63,7 @@ class GeradorNotaFiscalTest {
         NotaFiscal notaFiscal = geradorNotaFiscal.gerarNotaFiscal(fatura);
 
         geradorNotaFiscal.enviarSAP(notaFiscal);
-        assertEquals(notaFiscal, sap.getUltimaNotaFiscalEnviada());
+        assertEquals(notaFiscal, sap.getUltimoAdicionado());
     }
 
     @Test
