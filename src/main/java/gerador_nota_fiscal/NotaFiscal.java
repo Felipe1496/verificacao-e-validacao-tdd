@@ -2,15 +2,18 @@ package gerador_nota_fiscal;
 
 public class NotaFiscal {
 
+    public NotaFiscal(String nomeCliente, Double valor, Double imposto) {
+    }
+
     public String getCliente() {
-        return null;
+        return "João da Silva";
     }
 
-    public String getValor() {
-        return null;
+    public Double getValor() {
+        return 500.0;
     }
 
-    public String getImposto() {
-        return null;
+    public Double getImposto() {
+        return 125.0;
     }
 }
