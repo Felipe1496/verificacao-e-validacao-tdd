@@ -11,4 +11,8 @@ public class GeradorNotaFiscal {
         this.sap = sap;
         this.smtp = smtp;
     }
+
+    public NotaFiscal gerarNotaFiscal(Fatura fatura) {
+        return null;
+    }
 }
