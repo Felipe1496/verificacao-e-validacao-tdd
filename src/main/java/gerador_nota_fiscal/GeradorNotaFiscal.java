@@ -13,7 +13,7 @@ public class GeradorNotaFiscal {
     }
 
     public NotaFiscal gerarNotaFiscal(Fatura fatura) {
-        return new NotaFiscal(fatura.getNomeCliente(), fatura.getValor(), fatura.getTipoServico() == TipoServico.TREINAMENTO ? fatura.getValor() * 0.15 : fatura.getTipoServico() == TipoServico.CONSULTORIA ? fatura.getValor() * 0.25 : 120.0);
+        return new NotaFiscal(fatura.getNomeCliente(), fatura.getValor(), fatura.getTipoServico().getImposto() * fatura.getValor());
     }
 
     public void enviarPorEmail(NotaFiscal notaFiscal) {
