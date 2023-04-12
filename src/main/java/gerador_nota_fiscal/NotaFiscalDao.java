@@ -1,15 +1,9 @@
 package gerador_nota_fiscal;
 
-public class NotaFiscalDao {
-
-    private NotaFiscal notaFiscalPersistida;
+public class NotaFiscalDao extends Armazem<NotaFiscal> {
 
     public void salva(NotaFiscal nf) {
-        this.notaFiscalPersistida = nf;
+        this.adicionaNoHistorico(nf);
         System.out.println("salvando no banco");
-    }
-
-    public NotaFiscal getUltimaNotaFiscalPersistida() {
-        return this.notaFiscalPersistida;
     }
 }

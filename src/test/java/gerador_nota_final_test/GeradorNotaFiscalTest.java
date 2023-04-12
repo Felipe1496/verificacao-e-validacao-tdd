@@ -72,6 +72,6 @@ class GeradorNotaFiscalTest {
         NotaFiscal notaFiscal = geradorNotaFiscal.gerarNotaFiscal(fatura);
         geradorNotaFiscal.persistirNotaFiscal(notaFiscal);
 
-        assertEquals(notaFiscal, notaFiscalDao.getUltimaNotaFiscalPersistida());
+        assertEquals(notaFiscal, notaFiscalDao.getUltimoAdicionado());
     }
 }
