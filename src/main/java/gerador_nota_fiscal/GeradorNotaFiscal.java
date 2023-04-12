@@ -15,4 +15,14 @@ public class GeradorNotaFiscal {
     public NotaFiscal gerarNotaFiscal(Fatura fatura) {
         return null;
     }
+
+    public void enviarPorEmail(NotaFiscal notaFiscal) {
+
+    }
+
+    public void enviarSAP(NotaFiscal notaFiscal) {
+    }
+
+    public void persistirNotaFiscal(NotaFiscal notaFiscal) {
+    }
 }

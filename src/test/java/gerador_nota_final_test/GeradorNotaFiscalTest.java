@@ -41,7 +41,7 @@ class GeradorNotaFiscalTest {
 
     @Test
     void testGerarNotaFiscalServicoQualquerOutro() {
-        Fatura fatura = new Fatura("Pedro Oliveira", "Rua das Flores, 50", 2000.0, TipoServico.DESENVOLVIMENTO);
+        Fatura fatura = new Fatura("Pedro Oliveira", "Rua das Flores, 50", 2000.0, TipoServico.OUTRO);
         NotaFiscal notaFiscal = geradorNotaFiscal.gerarNotaFiscal(fatura);
         assertEquals("Pedro Oliveira", notaFiscal.getCliente());
         assertEquals(2000.0, notaFiscal.getValor());
@@ -50,7 +50,7 @@ class GeradorNotaFiscalTest {
 
     @Test
     void testEnviarNotaFiscalPorEmail() {
-        Fatura fatura = new Fatura("Carlos Silva", "Rua das Palmeiras, 200", 800.0, TipoServico.DESENVOLVIMENTO);
+        Fatura fatura = new Fatura("Carlos Silva", "Rua das Palmeiras, 200", 800.0, TipoServico.OUTRO);
         NotaFiscal notaFiscal = geradorNotaFiscal.gerarNotaFiscal(fatura);
         geradorNotaFiscal.enviarPorEmail(notaFiscal);
         // Verifica se o método de envio por e-mail foi chamado com a nota fiscal correta
@@ -59,22 +59,21 @@ class GeradorNotaFiscalTest {
 
     @Test
     void testEnviarNotaFiscalSAP() {
-        GeradorNotaFiscal gerador = new GeradorNotaFiscal();
-        Fatura fatura = new Fatura("Cliente Teste", "Rua Teste, 123", "CONSULTORIA", 1000.0);
-        NotaFiscal notaFiscal = gerador.geraNotaFiscal(fatura);
+        Fatura fatura = new Fatura("Cliente Teste", "Rua Teste, 123", 1000.0, TipoServico.CONSULTORIA);
+        NotaFiscal notaFiscal = geradorNotaFiscal.gerarNotaFiscal(fatura);
 
         SAP sap = new SAP();
-        gerador.enviarSAP(notaFiscal, sap);
+        geradorNotaFiscal.enviarSAP(notaFiscal);
 
         assertEquals(notaFiscal, sap.getUltimaNotaFiscalEnviada());
     }
 
     @Test
     void testPersistirNotaFiscalNoBanco() {
-        Fatura fatura = new Fatura("Ana Maria", "Rua das Margaridas, 500", 1500.0, TipoServico.DESENVOLVIMENTO);
+        Fatura fatura = new Fatura("Ana Maria", "Rua das Margaridas, 500", 1500.0, TipoServico.OUTRO);
         NotaFiscal notaFiscal = geradorNotaFiscal.gerarNotaFiscal(fatura);
         geradorNotaFiscal.persistirNotaFiscal(notaFiscal);
 
-        assertEquals(notaFiscal, sap.getUltimaNotaFiscalPersistida());
+        assertEquals(notaFiscal, notaFiscalDao.getUltimaNotaFiscalPersistida());
     }
 }

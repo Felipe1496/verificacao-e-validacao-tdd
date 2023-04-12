@@ -1,5 +1,5 @@
 package gerador_nota_fiscal;
 
 public enum TipoServico {
-    CONSULTORIA;
+    CONSULTORIA, TREINAMENTO, OUTRO;
 }
