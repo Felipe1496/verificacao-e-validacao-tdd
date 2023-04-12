@@ -12,6 +12,13 @@ public class CalculadoraDeSalario {
                 }
 
                 return funcionario.getSalarioBase() * 0.9;
+            case "DBA":
+            case "TESTADOR":
+                if (funcionario.getSalarioBase() >= 2000) {
+                    return funcionario.getSalarioBase() * 0.75;
+                }
+
+                return funcionario.getSalarioBase() * 0.85;
             default:
                 return funcionario.getSalarioBase();
         }
