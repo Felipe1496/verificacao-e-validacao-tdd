@@ -17,7 +17,7 @@ public class GeradorNotaFiscal {
     }
 
     public void enviarPorEmail(NotaFiscal notaFiscal) {
-
+        this.smtp.envia(notaFiscal);
     }
 
     public void enviarSAP(NotaFiscal notaFiscal) {
