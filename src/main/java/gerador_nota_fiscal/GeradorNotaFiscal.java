@@ -13,7 +13,7 @@ public class GeradorNotaFiscal {
     }
 
     public NotaFiscal gerarNotaFiscal(Fatura fatura) {
-        return new NotaFiscal("", 0.0, 0.0);
+        return new NotaFiscal(fatura.getNomeCliente(), fatura.getValor(), fatura.getValor() * 0.25);
     }
 
     public void enviarPorEmail(NotaFiscal notaFiscal) {
