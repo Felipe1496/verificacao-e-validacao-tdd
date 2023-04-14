@@ -1,8 +1,5 @@
 package calculadora_salario;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class CalculadoraDeSalario {
     public static double calcularSalarioLiquido(Funcionario funcionario) {
         switch (funcionario.getCargo()) {
