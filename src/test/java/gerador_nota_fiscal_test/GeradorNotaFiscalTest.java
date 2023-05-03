@@ -1,4 +1,4 @@
-package gerador_nota_final_test;
+package gerador_nota_fiscal_test;
 
 import gerador_nota_fiscal.*;
 import org.junit.jupiter.api.BeforeEach;
